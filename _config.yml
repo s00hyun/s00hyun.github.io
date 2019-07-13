@@ -296,3 +296,4 @@ defaults:
  
  
 remote_theme : mmistakes/minimal-mistakes
+disqus_shortname: s00hyun
