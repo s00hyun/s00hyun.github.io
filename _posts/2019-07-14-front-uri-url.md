@@ -9,10 +9,10 @@ comments: true
 
 ## 1. URI
 * Uniform Resource *Identifier*
-> /a name, locator, or both for an online resource/
+> a name, locator, or both for an online resource
 
 ## 2. URL
 * Uniform Resoure *Locator*
-> /just the locator of a online resource/
-* _*URL은 URI의 부분집합이다.*_
+> just the locator of a online resource
+* <u>**URL은 URI의 부분집합이다.**</u>
 	* location(경로)은 unique하므로 URL은 URI로 볼 수 있다.
