@@ -1,7 +1,7 @@
 ---
 title: "블로그 개설"
 date: 2019-07-13 23:52:28 -0600
-categories: story
+categories: Story
 comments: true
 ---
 

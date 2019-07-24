@@ -1,7 +1,7 @@
 ---
 title: "URI와 URL의 차이점"
 date: 2019-07-14 22:55:28 -0600
-categories: web
+categories: Web
 comments: true
 ---
 
