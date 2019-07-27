@@ -288,7 +288,7 @@ defaults:
       path: ""
       type: posts
     values:
-      layout: single
+      layout: category
       author_profile: true
       read_time: true
       comments: true
@@ -302,11 +302,3 @@ disqus_shortname: s00hyun
 collections:
   category:
     output: true
-
-defaults:
-  -
-    scope:
-      path: ""
-      type: category
-    values:
-      layout: "category"
