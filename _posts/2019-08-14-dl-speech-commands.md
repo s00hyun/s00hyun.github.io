@@ -1,7 +1,7 @@
 ---
-title: "TensorFlow.js: Speech Command Recognizer"
+title: "TensorFlow.js: Speech Command Recognizer (번역)"
 date: 2019-08-14 21:45:28 -0600
-categories: ML & DL
+categories: ML&DL
 tags: [딥러닝, 음성인식, TensorFlow, TensorFlow.js] 
 comments: true
 ---

@@ -1,7 +1,7 @@
 ---
 title: "삽질일기: TypeError: unhashable type: 'numpy.ndarray'"
 date: 2019-08-05 21:30:28 -0600
-categories: ML & DL
+categories: ML&DL
 tags: [딥러닝, 머신러닝, TensorFlow] 
 comments: true
 ---
