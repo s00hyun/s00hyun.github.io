@@ -19,7 +19,7 @@ locale                   : "ko"
 title                    : "샐리덕후의 감성코딩"
 title_separator          : "-"
 name                     : "샐덕"
-description              : "샐리를 좋아하는 문과감성 공대생의 감성코딩"
+description              : "샐리를 좋아하는 문과감성 공대생의 코딩기록"
 url                      : "https://s00hyun.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -109,7 +109,7 @@ analytics:
 author:
   name             : "샐덕"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "문과감성 공대생...\n- GIST EECS major(Psychology minor)\n- SW마에스트로 제10기 연수생"
+  bio              : "문과감성 공대생의 코딩기록\n- GIST EECS major(Psychology minor)\n- SW마에스트로 제10기 연수생"
   location         : "Seoul, South Korea"
   email            : "ff152@gist.ac.kr"
   links:
