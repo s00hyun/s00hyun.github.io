@@ -1,6 +1,6 @@
 ---
 title: "Keras predict_generator로 confusion matrix를 그렸을 때 accuracy가 안 맞는 오류 해결방안 정리"
-date: 2019-10-27 21:24:28 -0600
+date: 2019-10-27 21:58:28 -0600
 categories: ML&DL
 tags: [딥러닝, CNN, Keras] 
 comments: true
@@ -11,21 +11,32 @@ comments: true
 `ImageDataGenerator`로 데이터셋을 생성할 경우 `predict_classes` 대신 `predict_generator`를 이용해 테스트 클래스를 예측하게 되는데, 이 때 `evaluate_generator`로 얻은 accuracy와 `sklearn`의 `confusion_matrix`를 통해 계산한 accuracy가 일치하지 않는 문제가 발생했다.
 
 
-## 2. 원인
-
-`predict_generator`를 이용해 다음과 같이 테스트 클래스를 예측하면 인덱스가 맞지 않게 된다. 
-```
-confusion_matrix(validation_generator.classes, y_pred)
-```
-
-## 3. 해결방안 (Solution) 
+## 2. 원인 및 해결방안 (Reasons & Solutions)
 
 >  [https://groups.google.com/forum/#!topic/keras-users/bqWwFox_zZs](https://groups.google.com/forum/#!topic/keras-users/bqWwFox_zZs) 
 
+> [Tutorial on using Keras flow_from_directory and generators](https://medium.com/@vijayabhaskar96/tutorial-image-classification-with-keras-flow-from-directory-and-generators-95f75ebe5720)
+
+1) 제너레이터 생성 시, `shuffle=False`로 지정되어있는지 확인한다.
 ```
-confusion_matrix(validation_generator.classes[validation_generator.index_array], y_pred)
-``` 
-를 사용한다.
+valid_datagen = ImageDataGenerator(rescale=1.0 / 255)
+
+validation_generator = valid_datagen.flow_from_directory(
+    validation_dir,
+    target_size=(height, width),
+    batch_size=batch_size,
+    class_mode="categorical",
+    shuffle=False,  # For evaluation
+)
+```
+
+2) `predict_generator`를 호출하기 전에 반드시 제너레이터를 reset해야 한다!!!
+```
+validation_generator.reset()
+Y_pred = model.predict_generator(validation_generator, STEP_SIZE_VALID+1)#validation_generator.n // validation_generator.batch_size+1)
+classes = validation_generator.classes[validation_generator.index_array]
+y_pred = np.argmax(Y_pred, axis=-1)  # Returns maximum indices in each row
+```
 
 
 ## 4. 참고
