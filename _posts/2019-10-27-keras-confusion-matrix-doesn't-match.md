@@ -11,7 +11,7 @@ comments: true
 `ImageDataGenerator`로 데이터셋을 생성할 경우 `predict_classes` 대신 `predict_generator`를 이용해 테스트 클래스를 예측하게 되는데, 이 때 `evaluate_generator`로 얻은 accuracy와 `sklearn`의 `confusion_matrix`를 통해 계산한 accuracy가 일치하지 않는 문제가 발생했다.
 
 
-## 2. 원인 및 해결방안 (Reasons & Solutions)
+## 2. 원인 및 해결방안 (Causes & Solutions)
 
 >  [https://groups.google.com/forum/#!topic/keras-users/bqWwFox_zZs](https://groups.google.com/forum/#!topic/keras-users/bqWwFox_zZs) 
 
